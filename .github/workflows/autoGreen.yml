@@ -31,4 +31,4 @@ jobs:
         run: |
           git add README.md
           git commit -m "a commit a day keeps your girlfriend away" --allow-empty
-          git push 
+          git push origin master
