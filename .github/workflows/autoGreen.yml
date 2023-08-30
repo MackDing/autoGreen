@@ -15,21 +15,17 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v2
 
-      - name: Auto green
+      - name: Set user info
         run: |
-          # Increment commit count in a file
-          echo $(($(cat commit_count.txt) + 1)) > commit_count.txt
-          
-          # Create commit and push
-          git config --local user.email "${{ github.email }}"
-          git config --local user.name "${{ github.actor }}"
-          git add .
-          git commit -m "Auto commit #$(( $(cat commit_count.txt) ))"
-          git push origin master
+          git config --global user.email "${{ github.email }}"
+          git config --global user.name "${{ github.actor }}"
 
-          # Print commit time and count to README.md
-          echo "Last commit time: $(date)" >> README.md
-          echo "Commit count: $(cat commit_count.txt)" >> README.md
+      - name: Create and update README.md
+        run: |
+          echo "## Contributions" > README.md
+          echo "Last updated: $(date '+%Y-%m-%d %H:%M:%S %Z')" >> README.md
+          echo "Total commits: $(( $(git rev-list --count HEAD) + 1 ))" >> README.md
+          
           git add README.md
-          git commit -m "Update README with commit info"
-          git push origin master 
+          git commit -m "a commit a day keeps your girlfriend away" --allow-empty
+          git push
