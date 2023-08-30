@@ -19,18 +19,16 @@ jobs:
         run: |
           git config --global user.email "${{ github.email }}"
           git config --global user.name "${{ github.actor }}"
-          git fetch
-          git checkout master
+    
 
       - name: update README.md
         run: |
           echo "## AutoGreen" > README.md
-          echo "Last updated: $(date +'%Y-%m-%d %H:%M:%S %Z')\n" >> README.md
-          echo "Commits: ${{ github.event.repository.commits_count }}\n" >> README.md
-          echo "Timezone: Beijing Time (UTC+8)\n" >> README.md
+          echo "Last updated: $(date '+%Y-%m-%d %H:%M:%S %Z')" >> README.md
+          echo "Total commits: $(( $(git rev-list --count HEAD) + 1 ))" >> README.md
 
       - name: Commit and push changes
         run: |
           git add README.md
           git commit -m "a commit a day keeps your girlfriend away" --allow-empty
-          git push origin master
+          git push 
