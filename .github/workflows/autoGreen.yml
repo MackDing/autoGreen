@@ -19,7 +19,8 @@ jobs:
         run: |
           git config --local user.email "ran.ding@extremevision.com.cn"
           git config --local user.name "ran.ding"
-          echo "a commit a day keeps your girlfriend away" >> contribution.txt
+          echo "a commit a day keeps your girlfriend away" >> autoGreen.txt
+          echo %date:~0,10% %time%^ >> autoGreen.txt
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
           git commit --allow-empty -m "update!" --author="GitHub <noreply@github.com>"
