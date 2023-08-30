@@ -31,5 +31,5 @@ jobs:
  
           git add README.md
           git commit --allow-empty -m "a commit a day keeps your girlfriend away" --author="GitHub <noreply@github.com>"
-          git push
+          git push origin master
           
