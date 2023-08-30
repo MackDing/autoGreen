@@ -23,12 +23,13 @@ jobs:
 
       - name: update README.md
         run: |
+
+          git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git pull --rebase
           echo "## AutoGreen" > README.md
           echo "🕶️Last updated: $(date '+%Y-%m-%d %H:%M:%S %Z')" >> README.md
           echo "👙AutoGreen Total commits: $(( $(git rev-list --count HEAD) + 1 ))" >> README.md
-
-      - name: Commit and push changes
-        run: |
           git add README.md
-          git commit -m "a commit a day keeps your girlfriend away" --allow-empty
-          git push origin master
+          git commit --allow-empty -m "a commit a day keeps your girlfriend away"
+          git push
+          
