@@ -24,8 +24,8 @@ jobs:
       - name: update README.md
         run: |
           echo "## AutoGreen" > README.md
-          echo "Last updated: $(date '+%Y-%m-%d %H:%M:%S %Z')" >> README.md
-          echo "Total commits: $(( $(git rev-list --count HEAD) + 1 ))" >> README.md
+          echo "🕶️Last updated: $(date '+%Y-%m-%d %H:%M:%S %Z')" >> README.md
+          echo "👙AutoGreen Total commits: $(( $(git rev-list --count HEAD) + 1 ))" >> README.md
 
       - name: Commit and push changes
         run: |
