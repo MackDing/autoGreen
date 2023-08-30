@@ -1,0 +1,25 @@
+name: AutoGreen-CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "25 15 * * *"
+
+jobs:
+  autogreen:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v2
+
+      - name: Auto green
+        run: |
+          git config --local user.email "2215400217@qq.com"
+          git config --local user.name "xlc520"
+          git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git pull --rebase
+          git commit --allow-empty -m "update!"
+          git push
