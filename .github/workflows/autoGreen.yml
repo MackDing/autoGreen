@@ -29,7 +29,8 @@ jobs:
           echo "Commits: ${{ github.event.repository.commits_count }}\n" >> README.md
           echo "Timezone: Beijing Time (UTC+8)\n" >> README.md
 
-      - name: |
+      - name: Commit and push changes
+        run: |
           git add README.md
           git commit -m "a commit a day keeps your girlfriend away" --allow-empty
           git push origin master
