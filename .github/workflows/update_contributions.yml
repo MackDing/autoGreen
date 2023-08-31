@@ -14,5 +14,5 @@ jobs:
 
     - name: Run update script
       run: |
-        chmod +x update_contributions.sh
-        ./update_contributions.sh
+        chmod +x linux_autoGreen.sh
+        ./linux_autoGreen.sh
