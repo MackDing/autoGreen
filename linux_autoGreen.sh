@@ -9,4 +9,3 @@ echo "🕶️Last updated: $(TZ=Asia/Singapore date '+%Y-%m-%d %H:%M:%S %Z')" >>
 git add README.md
 git commit -m "A commit a day keeps the girlfriend away."
 git push origin master
-echo I'M Stronger..
