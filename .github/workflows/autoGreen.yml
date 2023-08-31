@@ -17,7 +17,7 @@ jobs:
 
       - name: Set user info
         run: |
-          git config --global user.email "svip87@icloud.com"
+          git config --global user.email "${{ github.email }}"
           git config --global user.name "${{ github.actor }}"
     
 
