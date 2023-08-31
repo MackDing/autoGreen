@@ -15,7 +15,6 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@v2
-        persist-credentials: false
 
       - name: Set user info
         run: |
