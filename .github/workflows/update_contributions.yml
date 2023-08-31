@@ -2,7 +2,7 @@ name: Update Contributions
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # 每天凌晨 00:00 UTC 执行
+    - cron: "0 */3 * * *"  # 每天凌晨 00:00 UTC 执行
 
 jobs:
   build:
