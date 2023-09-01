@@ -20,8 +20,10 @@ jobs:
           git config --local user.name "Blossom"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
+
           echo "## AutoGreen" > README.md
           echo "🕶️Last updated: $(TZ=Asia/Singapore date '+%Y-%m-%d %H:%M:%S %Z')" >> README.md
           git add README.md
+          
           git commit --allow-empty -m "a commit a day keeps your girlfriend away..."
           git push

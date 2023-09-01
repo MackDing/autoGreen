@@ -1,4 +1,4 @@
-name: ciMackDing
+name: ci-MackDing
 
 on:
   push:
