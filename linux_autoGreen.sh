@@ -1,8 +1,8 @@
 #!/bin/bash
 # git remote add origin https://github.com/MackDing/AutoGreen.git
 # crontab -e  
-# add fileName to Cron list (ex. 1 */2 * * * /data/mack/github/autoGreen/linux_autoGreen.sh)
-# 1 */2 * * * /data/mack/github/autoGreen/linux_autoGreen.sh
+# add fileName to Cron list (ex. 12 */1 * * * /data/mack/github/autoGreen/linux_autoGreen.sh)
+# 12 */1 * * * /data/mack/github/autoGreen/linux_autoGreen.sh
 
 cd "$(dirname "$0")"
 git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}

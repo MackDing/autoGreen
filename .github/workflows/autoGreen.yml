@@ -5,7 +5,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: "*/4 * * * *"
+    - cron: "*/12 * * * *"
 
 jobs:
   autogreen:
@@ -24,6 +24,6 @@ jobs:
           echo "## AutoGreen" > README.md
           echo "🕶️Last updated: $(TZ=Asia/Singapore date '+%Y-%m-%d %H:%M:%S %Z')" >> README.md
           git add README.md
-          
+
           git commit --allow-empty -m "a commit a day keeps your girlfriend away..."
           git push

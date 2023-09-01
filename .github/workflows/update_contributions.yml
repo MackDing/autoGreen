@@ -2,7 +2,7 @@ name: Update Contributions
 
 on:
   schedule:
-    - cron: "2 */3 * * *"  
+    - cron: 12 */1 * * *  
 
 jobs:
   build:
