@@ -1,13 +1,11 @@
-name: AutoGreen-CI
+name: ciBlossom
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - master
   schedule:
-     - cron: "0 */2 * * *"
-
+    - cron: "*/4 * * * *"
 
 jobs:
   autogreen:
@@ -16,21 +14,14 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v2
 
-      - name: Set user info
+      - name: Auto green
         run: |
-          git config --global user.email "${{ github.email }}"
-          git config --global user.name "${{ github.actor }}"
-    
-
-      - name: update README.md
-        run: |
-
+          git config --local user.email "svip87@icloud.com"
+          git config --local user.name "Blossom"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
           echo "## AutoGreen" > README.md
           echo "🕶️Last updated: $(TZ=Asia/Singapore date '+%Y-%m-%d %H:%M:%S %Z')" >> README.md
- 
           git add README.md
-          git commit --allow-empty -m "a commit a day keeps your girlfriend away." 
-          git push origin master
-          
+          git commit --allow-empty -m "a commit a day keeps your girlfriend away..."
+          git push
