@@ -5,7 +5,13 @@
 # 1 */2 * * * /data/mack/github/autoGreen/linux_autoGreen.sh
 
 cd "$(dirname "$0")"
+git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+git pull --rebase
+echo "## AutoGreen" > README.md
 echo "🕶️Last updated: $(TZ=Asia/Singapore date '+%Y-%m-%d %H:%M:%S %Z')" > README.md
 git add README.md
-git commit -m "A commit a day keeps the girlfriend away."
-git push origin master
+git commit -m "A commit a day keeps the girlfriend away"
+git push
+
+
+
