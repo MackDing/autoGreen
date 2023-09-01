@@ -1,4 +1,4 @@
-name: ciBlossom
+name: ci-Blossom
 
 on:
   push:
