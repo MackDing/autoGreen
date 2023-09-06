@@ -1,4 +1,4 @@
-name: ci-Blossom
+name: ci-autoGreen
 
 on:
   push:
