@@ -5,7 +5,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: "*/34 * * * *"
+    - cron: "*/[random between 1 and 59] * * * *"
 
 jobs:
   autogreen:
