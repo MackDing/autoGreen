@@ -22,7 +22,7 @@ jobs:
           git pull --rebase
 
           echo "## AutoGreen" > README.md
-          echo "🕶️Last updated: $(TZ=Asia/Singapore date '+%Y-%m-%d %H:%M:%S %Z')" >> README.md
+          echo "🎾 Last updated: $(TZ=Asia/Singapore date '+%Y-%m-%d %H:%M:%S %Z')" >> README.md
           git add README.md
 
           git commit --allow-empty -m "a commit a day keeps your girlfriend away..."
